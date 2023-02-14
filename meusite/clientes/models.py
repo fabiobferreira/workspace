@@ -18,7 +18,8 @@ class Cliente(models.Model):
     idade = models.IntegerField()
     email = models.EmailField()
     CPF = models.OneToOneField(CPF, null=True, blank=True, on_delete=models.CASCADE)
-    departamentos = models.ManyToManyField(Departamento, null=True, blank=True)    
+    departamentos = models.ManyToManyField(Departamento, null=True, blank=True)
+    foto = models.ImageField(upload_to='cliente_fotos')    
     
     def __str__(self):
         """String for representing the Model object."""

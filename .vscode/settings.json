@@ -2,6 +2,7 @@
     "python.linting.pylintEnabled": false,
     "cSpell.words": [
         "Bookinstance",
+        "conteudo",
         "descricao",
         "endereco",
         "isbn",

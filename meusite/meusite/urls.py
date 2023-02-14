@@ -16,15 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import home
-from clientes.views import clientes, cliente_detalhe 
+from clientes.views import clientes, cliente_detalhe
+from django.conf import settings
+from django.conf.urls.static import static 
 
 urlpatterns = [
     path('', home),
     path('clientes/', clientes),
     path('cliente/', cliente_detalhe),
-    path('admin/', admin.site.urls),
-    
-]
+    path('admin/', admin.site.urls),    
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Use include() to add paths from the catalog application
 from django.urls import include
