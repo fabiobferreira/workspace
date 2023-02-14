@@ -15,7 +15,7 @@ class Cliente(models.Model):
 class Telefone(models.Model):
     numero = models.CharField(max_length=20)
     descricao = models.CharField(max_length=80)
-    cliente = models.ForeignKey(Cliente)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE) 
         
     def __str__(self):
         """String for representing the Model object."""
