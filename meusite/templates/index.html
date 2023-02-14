@@ -1,0 +1,22 @@
+<h1>Meu Template</h1>
+
+<ul>
+    <li>Home</li>
+    <li>História</li>
+    <li>Sobre</li>
+    <li>Produtos</li>
+    <li>Contados</li>
+</ul>
+
+<p> Condicionais com Loops</p>
+<ul>
+    {% for pessoa in lista %}
+        {% if pessoa.sexo == 'm' or pessoa.sexo == 'M'%}
+        <li>Olá, Senhor {{ pessoa.nome }}</li><br>
+        {% elif pessoa.sexo == 'f' or pessoa.sexo == 'F'%}
+        <li>Olá, Senhora {{ pessoa.nome }}</li><br>
+        {% else %}
+        <li>Olá, {{ pessoa.nome }}</li><br>
+        {% endif %}
+    {% endfor %}
+</ul>
