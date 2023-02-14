@@ -1,7 +1,10 @@
 {
     "python.linting.pylintEnabled": false,
     "cSpell.words": [
+        "Bookinstance",
         "descricao",
+        "endereco",
+        "isbn",
         "Joao"
     ]
 }
