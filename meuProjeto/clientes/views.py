@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 
 def clientes(request):
-    return HttpResponse('Maria, Jose, Joao')
+    return HttpResponse('Maria, Jose, João')
 
 def cliente_detalhe(request, id):
     return HttpResponse(id)
