@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import clientes, home
+from .views import clientes, home, cliente_detalhe 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('clientes/', clientes),
     path('', home),
+    path('clientes/', clientes),
+    path('cliente/', cliente_detalhe),
+    path('admin/', admin.site.urls),
+    
 ]
 
 # Use include() to add paths from the catalog application

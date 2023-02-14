@@ -5,3 +5,6 @@ def home(request):
 
 def clientes(request):
     return HttpResponse('Maria, João, José')
+
+def cliente_detalhe(request):
+    return HttpResponse('Cliente Detalhe')
