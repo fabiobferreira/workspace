@@ -4,7 +4,8 @@ from .models import (
     Marca, 
     Veiculo, 
     Parametros, 
-    MovRotativo
+    MovRotativo,
+    
     )
 
 class MovRotativoAdmin(admin.ModelAdmin):
@@ -24,5 +25,4 @@ admin.site.register(Marca)
 admin.site.register(Veiculo)
 admin.site.register(Pessoa)
 admin.site.register(Parametros)
-admin.site.register(MovRotativo)
-admin.site.register(MovRotativoAdmin)
+admin.site.register(MovRotativo, MovRotativoAdmin)
