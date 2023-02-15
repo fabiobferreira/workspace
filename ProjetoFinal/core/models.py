@@ -1,4 +1,5 @@
 from django.db import models
+import math
 
 # Create your models here.
 
@@ -25,4 +26,29 @@ class Veiculo(models.Model):
     
     def __str__(self) -> str:
         return self.marca + ' - ' + self.cor + ' - ' + self.placa
+    
+class Parametros(models.Model):
+    valor_hora = models.DecimalField(max_digits=6, decimal_places=2)
+    valor_mes = models.DecimalField(max_digits=10, decimal_places=2)
+    
+    def __str__(self):
+        return 'Parâmetros Gerais'    
+    
+class MovRotativo(models.Model):
+    veiculo = models.ForeignKey(Veiculo, on_delete=models.CASCADE)
+    checkin = models.DateTimeField(auto_now=False)
+    checkout =  models.DateTimeField(auto_now=False, null=False, blank=True)
+    valor_hora = models.DecimalField(max_digits=6, decimal_places=2)
+    pago = models.BooleanField(default=False)
+    
+    def horas_total(self):
+         return math.ceil((self.checkout - self.checkin).total_seconds() / 3600)
+    
+    def total(self):
+        return self.valor_hora * self.horas_total()
+    
+    def __str__(self):
+        return self.veiculo.cor.placa
+    
+
     
