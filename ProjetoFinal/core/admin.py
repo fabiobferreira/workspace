@@ -5,8 +5,8 @@ from .models import (
     Veiculo, 
     Parametros, 
     MovRotativo,
-    Mensalista
-    
+    Mensalista,
+    MovMensalista  
     )
 
 class MovRotativoAdmin(admin.ModelAdmin):
@@ -22,6 +22,12 @@ class MovRotativoAdmin(admin.ModelAdmin):
     
     def veiculo(self, obj):
         return obj.veiculo
+    
+class MovMensalistaAdmin(admin.ModelAdmin):
+    list_display = (
+        'mensalista', 
+        'dt_pgto', 
+        'dt_pgto')
 
 # Register your models here.
 
@@ -31,3 +37,4 @@ admin.site.register(Pessoa)
 admin.site.register(Parametros)
 admin.site.register(MovRotativo, MovRotativoAdmin)
 admin.site.register(Mensalista)
+admin.site.register(MovMensalista, MovMensalistaAdmin)
