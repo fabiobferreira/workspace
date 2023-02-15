@@ -1,7 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Pessoa
 
 # Create your views here.
 
 def home(request):
-    return HttpResponse('Olá, Mundo!')
+    context = {'mensagem': 'Olá, Mundo'}
+    return render(request, 'core/index.html', context)
+
+def lista_pessoas(request):
+    pessoas = Pessoa.objects.all()
+    return render(request, 'core/lista_pessoas.html', {'pessoas': pessoas})
