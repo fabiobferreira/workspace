@@ -1,5 +1,5 @@
 """
-ASGI config for ProjetoFinal project.
+ASGI config for estacionamento project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ProjetoFinal.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'estacionamento.settings')
 
 application = get_asgi_application()

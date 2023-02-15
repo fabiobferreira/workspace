@@ -1,5 +1,5 @@
 """
-WSGI config for ProjetoFinal project.
+WSGI config for estacionamento project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ProjetoFinal.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'estacionamento.settings')
 
 application = get_wsgi_application()
