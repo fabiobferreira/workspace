@@ -2,7 +2,9 @@ from django.shortcuts import render
 from .models import (
     Pessoa, 
     Veiculo, 
-    MovRotativo
+    MovRotativo,
+    Mensalista,
+    MovMensalista,
     )
 
 
@@ -23,3 +25,11 @@ def lista_veiculos(request):
 def lista_rotativo(request):
     rotativo = MovRotativo.objects.all()
     return render(request, 'core/lista_rotativo.html', {'rotativo': rotativo})
+
+def lista_mensalistas(request):
+    mensalistas = Mensalista.objects.all()
+    return render(request, 'core/lista_mensalistas.html', {'mensalistas': mensalistas})
+
+def lista_movmensalistas(request):
+    movmensalistas = Mensalista.objects.all()
+    return render(request, 'core/lista_movmensalistas.html', {'movmensalistas': movmensalistas})
