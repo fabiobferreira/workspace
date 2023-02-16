@@ -1,0 +1,7 @@
+<h2>Lista de Rotativos</h2>
+
+<ul>
+{% for rotativo in rotativo %}
+    <li>{{ rotativo.checkin }} - {{ rotativo.veiculo }} - {{ rotativo.placa }}</li>
+{% endfor %}
+<ul>
