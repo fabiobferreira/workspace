@@ -8,19 +8,19 @@ from .models import (
     )
 
 
-from .form import PessoaForm
+from .form import PessoaForm, VeiculoForm
 
 # Create your views here.
 
 def home(request):
-    context = {'mensagem': 'Olá, Mundo'}
+    context = {'mensagem': 'Página Inicial'}
     return render(request, 'core/index.html', context)
 
 def lista_pessoas(request):
     pessoas = Pessoa.objects.all()
     form = PessoaForm()
     data = {'pessoas': pessoas, 'form': form}
-    return render(request, 'core/lista_pessoas.html',data)
+    return render(request, 'core/lista_pessoas.html', data)
 
 def pessoas_novo(request):
     form = PessoaForm(request.POST or None)
@@ -30,7 +30,15 @@ def pessoas_novo(request):
 
 def lista_veiculos(request):
     veiculos = Veiculo.objects.all()
-    return render(request, 'core/lista_veiculos.html', {'veiculos': veiculos})
+    form = VeiculoForm(request.POST or None)
+    data = {'veiculos': veiculos, 'form': form}
+    return render(request, 'core/lista_veiculos.html', data)
+
+def veiculos_novo(request):
+    form = VeiculoForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    return redirect('core_lista_veiculos')
 
 def lista_rotativo(request):
     rotativo = MovRotativo.objects.all()
