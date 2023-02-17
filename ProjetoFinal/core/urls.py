@@ -16,20 +16,24 @@ Including another URLconf
 from django.urls import path
 from . views import (
     home, 
-    lista_pessoas, 
-    lista_veiculos,
-    lista_rotativo,
-    lista_mensalistas,
-    lista_movmensalistas,
+    lista_pessoas,
     pessoas_novo,
-    veiculos_novo,
-    rotativo_novo,
-    mensalistas_novo,
-    movmensalistas_novo,
     pessoas_update,
+     
+    lista_veiculos,
+    veiculos_novo,
     veiculos_update,
+    
+    lista_rotativo,    
+    rotativo_novo,
     rotativo_update,
+    
+    lista_mensalistas,
+    mensalistas_novo,
     mensalistas_update,
+    
+    lista_movmensalistas,   
+    movmensalistas_novo,
     movmensalistas_update
     )
 

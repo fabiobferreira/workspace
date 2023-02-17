@@ -80,7 +80,7 @@ def lista_rotativo(request):
     rotativo = MovRotativo.objects.all()
     form = MovRotativo(request.POST or None)
     data = {'rotativo': rotativo, 'form': form}
-    return render(request, 'core/lista_rotativo.html', )
+    return render(request, 'core/lista_rotativo.html', data)
 
 def rotativo_novo(request):
     form = MovRotativoForm(request.POST or None)
