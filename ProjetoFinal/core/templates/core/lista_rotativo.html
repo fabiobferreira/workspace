@@ -1,8 +1,13 @@
-<h2>Lista de Rotativos</h2>
+<h2>Lista de Rotativos - está com defeito (corrigir)</h2>
 
 <ul>
 {% for rotativo in rotativo %}
-    <li>{{ rotativo.veiculo}} </li> - <li>{{ rotativo.checkin}}</li>
+    <li>
+        <a href="{% url 'core_veiculos_update' %}">
+            {{ rotativo.checkin}} - {{ rotativo.veiculo.placa}}  
+        </a>
+    </li>
+    
 {% endfor %}
 <ul>
 

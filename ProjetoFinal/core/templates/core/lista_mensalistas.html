@@ -2,7 +2,11 @@
 
 <ul>
 {% for mensalistas in mensalistas %}
-    <li>{{ mensalistas.veiculo }}</li> - <li>{{ mensalistas.inicio }}</li>
+    <li>
+        <a href="{% url 'core_mensalistas_update' %}"> 
+            {{ mensalistas.veiculo }} - {{ mensalistas.inicio }}
+        </a>
+    </li> 
 {% endfor %}
 <ul>
 

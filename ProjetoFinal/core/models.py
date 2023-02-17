@@ -25,7 +25,7 @@ class Veiculo(models.Model):
     observacoes = models.TextField()
     
     def __str__(self) -> str:
-        return self.marca + ' - ' + self.cor + ' - ' + self.placa
+        return str(self.marca) + ' - ' + str(self.cor) + ' - ' + str(self.placa)
     
 class Parametros(models.Model):
     valor_hora = models.DecimalField(max_digits=6, decimal_places=2)

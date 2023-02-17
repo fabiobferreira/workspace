@@ -1,8 +1,10 @@
 <h2>Lista de Pessoas</h2>
 
 <ul>
-{% for pessoa in pessoas %}
-    <li>{{ pessoa.nome }}</li>
+{% for pessoas in pessoas %}
+    <li>
+        <a href="{% url 'core_pessoas_update' %}"> {{ pessoas.nome }} </a>         
+    </li>
 {% endfor %}
 <ul>
 

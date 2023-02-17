@@ -1,10 +1,12 @@
 <h2>Lista de Veículos</h2>
 
 <ul>
-{% for veiculos in veiculos %}
-    <li>{{ veiculos.placa }}</li>
-{% endfor %}
-<ul>
+    {% for veiculos in veiculos %}
+        <li>
+            <a href="{% url 'core_veiculos_update' %}"> {{ veiculos.placa }} </a>         
+        </li>
+    {% endfor %}
+    <ul>
 
     
 <form action="{% url 'core_veiculos_novo' %}" method="POST">    
