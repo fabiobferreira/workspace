@@ -48,7 +48,7 @@ class MovRotativo(models.Model):
         return self.valor_hora * self.horas_total()
     
     def __str__(self):
-        return self.veiculo.cor.placa
+        return str(self.veiculo) + ' - ' + str(self.checkin)
     
 class Mensalista(models.Model):
     veiculo = models.ForeignKey(Veiculo, on_delete=models.CASCADE)
