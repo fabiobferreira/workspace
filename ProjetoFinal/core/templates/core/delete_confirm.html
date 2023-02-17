@@ -1,0 +1,6 @@
+<h2> Você tem certeza que deseja deletar o item {{ obj }} ?</h2> 
+
+<form method="POST">
+    {% csrf_token %}
+    <button typer="submit">Deletar</button>
+</form>
