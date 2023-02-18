@@ -1,15 +1,21 @@
-<h2>Lista de Pessoas</h2>
+{% extends 'base.html' %}
 
-<ul>
-{% for pessoas in pessoas %}
-    <li>
-        <a href="{% url 'core_pessoas_update' %}"> {{ pessoas.nome }} </a>         
-    </li>
-{% endfor %}
-<ul>
+{% block main %}
 
-<form action="{% url 'core_pessoas_novo' %}" method="POST">    
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Cadastrar</button>
-</form>
+    <h2>Lista de Pessoas</h2>
+
+    <ul>
+    {% for pessoas in pessoas %}
+        <li>
+            <a href="{% url 'core_pessoas_update' %}"> {{ pessoas.nome }} </a>         
+        </li>
+    {% endfor %}
+    <ul>
+
+    <form action="{% url 'core_pessoas_novo' %}" method="POST">    
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Cadastrar</button>
+    </form>
+
+{% endblock main %}

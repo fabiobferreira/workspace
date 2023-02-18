@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
 <h2> Updating Mensalistas: {{ movmensalistas }}</h2>
 
 <form action="{% url 'core_movmensalistas_update' movmensalistas.id %}" method="POST">    
@@ -7,3 +11,5 @@
 </form>
 
 <a href="{% url 'core_movmensalistas_delete' movmensalistas.id %}">Deletar</a>
+
+{% endblock main %}
