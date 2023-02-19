@@ -8,26 +8,33 @@
         <title>Base</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-        
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">        
     </head>
     <body>
         <div class="container-fluid">
             {% block menu %}
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <div class="container-fluid">
-                    <a class="navbar-brand" href="{% url 'core_home' %}" target="_blank">Página Inicial</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                        <a class="nav-link" href="{% url 'core_lista_pessoas' %}" target="_blank">Pessoas</a>
-                        <a class="nav-link" href="{% url 'core_lista_veiculos' %}" target="_blank">Veículos</a>
-                        <a class="nav-link" href="{% url 'core_lista_rotativo' %}" target="_blank">Rotativo</a>
-                        <a class="nav-link" href="{% url 'core_lista_mensalistas' %}" target="_blank">Mensalistas</a>
+                        <a class="navbar-brand" href="{% url 'core_home' %}" target="_blank">Olá, {{ user }}</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                            <a class="nav-link" href="{% url 'core_home' %}" target="_blank">Início</a>
+                            <a class="nav-link" href="{% url 'core_lista_pessoas' %}" target="_blank">Pessoas</a>
+                            <a class="nav-link" href="{% url 'core_lista_veiculos' %}" target="_blank">Veículos</a>
+                            <a class="nav-link" href="{% url 'core_lista_rotativo' %}" target="_blank">Rotativo</a>
+                            <a class="nav-link" href="{% url 'core_lista_mensalistas' %}" target="_blank">Mensalistas</a>                            
+                            </div>
+                            <div>                                
+                                {% if user.is_authenticated%}
+                                    <a class="nav-link" href="{% url 'logout' %}">Sair</a>
+                                {% else %}
+                                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                                {% endif %}                                    
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </nav>
             {% endblock menu %}
