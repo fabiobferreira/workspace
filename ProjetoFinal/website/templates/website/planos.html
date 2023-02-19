@@ -1,0 +1,37 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block main %}
+
+<hr>
+<div class="row row-space">
+    <div class="col-9">
+        Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!Quem num gosta di mé, boa gentis num é.Detraxit consequat et quo num tendi nada.Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.
+
+        Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.Atirei o pau no gatis, per gatis num morreus.Quem num gosta di mim que vai caçá sua turmis!Leite de capivaris, leite de mula manquis sem cabeça.      
+    </div>
+    <div class="col-3">
+        <img src="{% static 'img/car.jpeg' %}" alt="Estacionamento 24 Horas">
+        <a href="{% url 'website_contato' %}" target="_blank">
+        <button class="btn btn-primary">Contatar</button>
+        </a>
+    </div> 
+</div>
+
+<hr>
+<div class="row row-space">
+    <div class="col-9">
+        Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!Quem num gosta di mé, boa gentis num é.Detraxit consequat et quo num tendi nada.Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.
+
+        Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.Atirei o pau no gatis, per gatis num morreus.Quem num gosta di mim que vai caçá sua turmis!Leite de capivaris, leite de mula manquis sem cabeça.      
+    </div>
+    <div class="col-3">
+        <img src="{% static 'img/car.jpeg' %}" alt="Estacionamento 24 Horas">
+        <a href="{% url 'website_contato' %}" target="_blank">
+        <button class="btn btn-primary">Contatar</button>
+        </a>
+    </div>   
+</div>
+
+
+{% endblock main %}
