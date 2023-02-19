@@ -4,7 +4,7 @@
 {% block main %}
 <div class="row">
     <div class="col-sm-12">
-        <h2>Lista de Mensalistas</h2>
+        <h2>Cadastro</h2>
     </div>
 </div>
 <div class="row">
@@ -15,21 +15,29 @@
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
     </div>
-</div>
     <div class="col-sm-6">
-        <ul>
-            {% for mensalistas in mensalistas %}
-            <li>
-                <a href="{% url 'core_mensalistas_update' %}"> 
-                    {{ mensalistas.veiculo }} - {{ mensalistas.inicio }}
-                </a>
-            </li>
+        <h2>Lista de Mensalistas</h2>
+        <table class="table">
+            <thead class="table-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">VEÍCULO</th>
+                <th scope="col">INÍCIO</th>
+                <th scope="col">VALOR</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for mensalistas in mensalistas %}  
+            <tr>
+                <th scope="rowl">{{ mensalistas.id }}</th>
+                <th scope="rowl">{{ mensalistas.veiculo }}</th>
+                <th scope="rowl">{{ mensalistas.inicio }}</th>
+                <th scope="rowl">{{ mensalistas.valor_mes }}</th>
+            </tr>
             {% endfor %}
-        <ul>
-    </div>
-</div> 
-
-
-
+            </tbody>
+        </table>
+    </div>    
+</div>
 
 {% endblock main %}

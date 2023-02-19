@@ -5,16 +5,40 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Document</title>
+        <title>Base</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
-        <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        
     </head>
     <body>
-        <div class="container-fluid"> 
-            {% block  main %}        
+        <div class="container-fluid">
+            {% block menu %}
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                    <a class="navbar-brand" href="{% url 'core_home' %}" target="_blank">Página Inicial</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                        <a class="nav-link" href="{% url 'core_lista_pessoas' %}" target="_blank">Pessoas</a>
+                        <a class="nav-link" href="{% url 'core_lista_veiculos' %}" target="_blank">Veículos</a>
+                        <a class="nav-link" href="{% url 'core_lista_rotativo' %}" target="_blank">Rotativo</a>
+                        <a class="nav-link" href="{% url 'core_lista_mensalistas' %}" target="_blank">Mensalistas</a>
+                        </div>
+                    </div>
+                    </div>
+                </nav>
+            {% endblock menu %}
+            
+            {% block  main %}
+
             {% endblock main %}  
         </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script> 
     </body>
 </html>

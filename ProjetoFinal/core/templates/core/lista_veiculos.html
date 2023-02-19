@@ -5,7 +5,7 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <h2>Lista de Veículos</h2>
+        <h2>Cadastro</h2>
     </div>
 </div>
 <div class="row">
@@ -17,13 +17,31 @@
         </form>
     </div>
     <div class="col-sm-6">
-        <ul>
-        {% for veiculos in veiculos %}
-            <li>
-                <a href="{% url 'core_veiculos_update' %}"> {{ veiculos.placa }} </a>         
-            </li>
-        {% endfor %}
-        <ul>
+      <h2>Lista de Veículos</h2>
+        <table class="table">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">PROPRIETÁRIO</th>
+                <th scope="col">MARCA</th>
+                <th scope="col">PLACA</th>
+                <th scope="col">COR</th>
+                <th scope="col">OBS.:</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for veiculos in veiculos %}  
+              <tr>
+                <th scope="rowl">{{ veiculos.id }}</th>
+                <th scope="rowl">{{ veiculos.proprietario}}</th>
+                <th scope="rowl">{{ veiculos.marca }}</th>
+                <th scope="rowl">{{ veiculos.placa }}</th>
+                <th scope="rowl">{{ veiculos.cor }}</th>
+                <th scope="rowl">{{ veiculos.observacoes }}</th>
+              </tr>
+              {% endfor %}
+            </tbody>
+        </table>
     </div>
 </div>
 

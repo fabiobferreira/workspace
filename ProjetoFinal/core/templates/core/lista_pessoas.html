@@ -2,10 +2,9 @@
 {% load bootstrap %}
 
 {% block main %}
-
 <div class="row">
     <div class="col-sm-12">
-        <h2>Lista de Pessoas</h2>
+        <h2>Cadastro</h2>
     </div>
 </div>
 <div class="row">
@@ -17,19 +16,28 @@
         </form>
     </div>
     <div class="col-sm-6">
-        <ul>
-        {% for pessoas in pessoas %}
-            <li>
-                <a href="{% url 'core_pessoas_update' %}"> {{ pessoas.nome }} </a>         
-            </li>
-        {% endfor %}
-        <ul>
+      <h2>Lista de Pessoas</h2>
+        <table class="table">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NOME</th>
+                <th scope="col">ENDEREÇO</th>
+                <th scope="col">TELEFONE</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for pessoas in pessoas %}  
+              <tr>
+                <th scope="rowl">{{ pessoas.id }}</th>
+                <th scope="rowl">{{ pessoas.nome }}</th>
+                <th scope="rowl">{{ pessoas.endereco }}</th>
+                <th scope="rowl">{{ pessoas.telefone }}</th>
+              </tr>
+              {% endfor %}
+            </tbody>
+        </table>
     </div>
-</div>
-    
-
-    
-
-   
+</div>  
 
 {% endblock main %}

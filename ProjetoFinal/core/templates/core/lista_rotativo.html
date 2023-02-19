@@ -4,7 +4,7 @@
 {% block main %}
 <div class="row">
     <div class="col-sm-12">
-        <h2>Lista de Rotativos - está com defeito (corrigir)</h2>
+        <h2>Cadastro - está com defeito (corrigir)</h2>
     </div>
 </div>
 <div class="row">
@@ -15,16 +15,32 @@
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
     </div>
-    <div class="col-sm-6"> 
-        <ul>
-        {% for rotativo in rotativo %}
-            <li>
-                <a href="{% url 'core_veiculos_update' %}">
-                    {{ rotativo.veiculo}} - {{ rotativo.checkin}}  
-                </a>
-            </li>
-        {% endfor %}
-        <ul>
+    <div class="col-sm-6">
+      <h2>Lista de Rotativos</h2> 
+        <table class="table">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">VEÍCULO</th>
+                <th scope="col">CHECKIN</th>
+                <th scope="col">CHECKOUT</th>
+                <th scope="col">VALOR HORA</th>
+                <th scope="col">PAGO</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for rotativo in rotativo %}  
+              <tr>
+                <th scope="rowl">{{ rotativo.id }}</th>
+                <th scope="rowl">{{ rotativo.veiculo }}</th>
+                <th scope="rowl">{{ rotativo.checkin }}</th>                
+                <th scope="rowl">{{ rotativo.checkout }}</th>
+                <th scope="rowl">{{ rotativo.valor_hora }}</th>
+                <th scope="rowl">{{ rotativo.pago }}</th>
+              </tr>
+              {% endfor %}
+            </tbody>
+        </table>
     </div>
 </div>
 
