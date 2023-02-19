@@ -2,11 +2,15 @@
 
 {% block main %}
 
-<h2> Você tem certeza que deseja deletar o item {{ obj }} ?</h2> 
+<div class="row">
+    <div class="col">
+        <h2> Você tem certeza que deseja deletar o item {{ obj }} ?</h2> 
 
-<form method="POST">
-    {% csrf_token %}
-    <button typer="submit">Deletar</button>
-</form>
+        <form method="POST">
+            {% csrf_token %}
+            <button typer="submit" class="btn btn-danger">Deletar</button>
+        </form>
+    </div>
+</div>
 
 {% endblock main %}
