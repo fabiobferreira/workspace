@@ -8,13 +8,13 @@ class Pessoa(models.Model):
     endereco = models.CharField(max_length=200)
     telefone = models.CharField(max_length=20)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.nome
 
 class Marca(models.Model):
     nome = models.CharField(max_length=50)
     
-    def __str__(self) -> str:
+    def __str__(self):
         return self.nome    
     
 class Veiculo(models.Model):
@@ -24,7 +24,7 @@ class Veiculo(models.Model):
     cor = models.CharField(max_length=15)
     observacoes = models.TextField()
     
-    def __str__(self) -> str:
+    def __str__(self):
         return str(self.marca) + ' - ' + str(self.cor) + ' - ' + str(self.placa)
     
 class Parametros(models.Model):
@@ -65,5 +65,3 @@ class MovMensalista(models.Model):
     
     def __str__(self):
         return str(self.mensalista) + ' - ' + str(self.total)
-
-    
