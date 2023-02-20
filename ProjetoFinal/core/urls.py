@@ -42,6 +42,9 @@ from . views import (
     movmensalistas_novo,
     movmensalistas_update,
     movmensalistas_delete,
+    
+    Pdf,
+    ExportarParaCSV,
     )
 
 urlpatterns = [
@@ -69,5 +72,8 @@ urlpatterns = [
     path('movmensalistas', lista_movmensalistas, name='core_lista_movmensalistas'),
     path('movmensalistas_novo', movmensalistas_novo, name='core_movmensalistas_novo'),
     path('movmensalistas_update', movmensalistas_update, name='core_movmensalistas_update'),
-    path('movmensalistas_delete', movmensalistas_delete, name='core_movmensalistas_delete'),    
+    path('movmensalistas_delete', movmensalistas_delete, name='core_movmensalistas_delete'),
+    
+    path('relatorio-pdf', Pdf.as_view(), name='relatorio_pdf'),
+    path('relatorio-csv', ExportarParaCSV.as_view(), name='relatorio_csv')   
 ]

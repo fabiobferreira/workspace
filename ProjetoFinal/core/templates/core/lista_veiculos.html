@@ -42,7 +42,10 @@
               {% endfor %}
             </tbody>
         </table>
-    </div>
+        <a class="btn btn-primary" href="{% url 'relatorio_pdf' %}" target="_blank">Relatório PDF</a>
+        <a class="btn btn-primary" href="{% url 'relatorio_csv' %}" target="_blank">Relatorio CSV</a>
+        
+    </div>    
 </div>
 
     
